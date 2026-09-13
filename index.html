@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oak & Loom Furniture — stylish, durable furniture for modern homes.">
+  <title>Oak & Loom Furniture | Modern Furniture</title>
+  <style>
+    :root{--ink:#241d18;--muted:#756b63;--cream:#f7f3ed;--card:#fff;--accent:#a66a3f;--accent2:#7e4d2e;--line:#e8dfd5}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(247,243,237,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:800;letter-spacing:.08em;font-size:1.05rem}
+    .links{display:flex;gap:26px;align-items:center}.links a{font-size:.94rem}.menu{display:none;border:0;background:none;font-size:1.5rem}
+    .btn{display:inline-block;background:var(--accent);color:white;padding:12px 19px;border-radius:8px;font-weight:700;border:0;cursor:pointer}.btn:hover{background:var(--accent2)}
+    .hero{padding:90px 0 80px;background:linear-gradient(90deg,rgba(35,27,21,.9),rgba(35,27,21,.28)),url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1800&q=85') center/cover;color:white}
+    .hero-content{max-width:650px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.78rem;font-weight:700;opacity:.9}.hero h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.03;margin:14px 0}.hero p{font-size:1.12rem;max-width:570px;color:#f4eee8}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn.light{background:white;color:var(--ink)}.btn.outline{background:transparent;border:1px solid rgba(255,255,255,.7)}
+    section{padding:76px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}.section-head h2{font-size:2.1rem;line-height:1.15;margin:8px 0}.section-head p{color:var(--muted);max-width:580px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 7px 25px rgba(50,35,20,.06)}.card img{width:100%;height:230px;object-fit:cover;display:block}.card-body{padding:20px}.card h3{margin:0 0 7px}.price{font-weight:800;font-size:1.05rem;color:var(--accent2);margin:10px 0 15px}.small{color:var(--muted);font-size:.92rem}
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.feature{padding:24px;background:white;border:1px solid var(--line);border-radius:12px}.feature b{display:block;margin-bottom:5px}
+    .about{background:#eee6dc}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.about img{width:100%;border-radius:16px;height:410px;object-fit:cover}
+    .contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px}.contact-box,.form{background:white;border:1px solid var(--line);border-radius:14px;padding:28px}.contact-list{margin-top:22px}.contact-list div{margin:15px 0}.contact-list strong{display:block}
+    form{display:grid;gap:14px}label{font-weight:700;font-size:.9rem}input,textarea,select{width:100%;padding:13px;border:1px solid #d9cfc4;border-radius:8px;font:inherit;background:#fff}textarea{min-height:125px;resize:vertical}
+    footer{background:#241d18;color:#eee;padding:42px 0}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.footer-grid p,.footer-grid a{color:#c9c0b8;font-size:.92rem;display:block;margin:7px 0}.copy{border-top:1px solid #4b4139;margin-top:25px;padding-top:20px;color:#aaa;font-size:.82rem}
+    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;background:#25D366;color:white;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:27px;box-shadow:0 7px 20px #0003}
+    .notice{display:none;margin-top:12px;padding:12px;background:#e8f7ed;border-radius:8px;color:#22633a}
+    @media(max-width:800px){.links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--cream);padding:18px 4%;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.nav-btn{display:none}.grid{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}.about-grid,.contact{grid-template-columns:1fr}.about img{height:300px}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.hero{padding:70px 0}.grid,.features,.footer-grid{grid-template-columns:1fr}.section-head{display:block}.hero h1{font-size:2.7rem}.card img{height:210px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">OAK & LOOM</a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    <div class="links">
+      <a href="#home">Home</a><a href="#products">Products</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
+    </div>
+    <a class="btn nav-btn" href="#products">Shop Now</a>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-content">
+    <div class="eyebrow">Furniture made for living</div>
+    <h1>Make your home feel beautifully yours.</h1>
+    <p>Discover comfortable sofas, elegant dining sets, practical storage and timeless pieces designed to bring warmth to every room.</p>
+    <div class="actions"><a class="btn" href="#products">Explore Collection</a><a class="btn light" href="#contact">Get a Quote</a></div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container"> 
+<div class="section-head"><div><div class="eyebrow" style="color:var(--accent)">Our collection</div><h2>Featured furniture</h2></div><p>Replace these sample products, prices and photos with your real inventory. Each button can send an order directly to WhatsApp.</p></div>
+    <div class="grid">
+      <article class="card"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Modern sofa"><div class="card-body"><h3>Modern Comfort Sofa</h3><p class="small">Soft upholstery with a clean, contemporary silhouette.</p><div class="price">PKR 85,000</div><button class="btn" onclick="order('Modern Comfort Sofa')">Order on WhatsApp</button></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80" alt="Living room furniture"><div class="card-body"><h3>Classic Lounge Chair</h3><p class="small">A statement accent chair for reading, relaxing and guests.</p><div class="price">PKR 32,000</div><button class="btn" onclick="order('Classic Lounge Chair')">Order on WhatsApp</button></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80" alt="Wooden dining table"><div class="card-body"><h3>Oak Dining Set</h3><p class="small">Warm wood tones and a sturdy design for everyday dining.</p><div class="price">PKR 110,000</div><button class="btn" onclick="order('Oak Dining Set')">Order on WhatsApp</button></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=900&q=80" alt="Bedroom furniture"><div class="card-body"><h3>Minimal Bed Frame</h3><p class="small">Simple lines and a calm finish for a restful bedroom.</p><div class="price">PKR 70,000</div><button class="btn" onclick="order('Minimal Bed Frame')">Order on WhatsApp</button></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=80" alt="Wooden cabinet"><div class="card-body"><h3>Storage Cabinet</h3><p class="small">Practical storage with a refined furniture look.</p><div class="price">PKR 48,000</div><button class="btn" onclick="order('Storage Cabinet')">Order on WhatsApp</button></div></article>
+      <article class="card"><img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=900&q=80" alt="Coffee table"><div class="card-body"><h3>Modern Coffee Table</h3><p class="small">A versatile centerpiece for modern living spaces.</p><div class="price">PKR 25,000</div><button class="btn" onclick="order('Modern Coffee Table')">Order on WhatsApp</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+<div class="container">
+  <div class="section-head"><div><div class="eyebrow" style="color:var(--accent)">Why choose us</div><h2>Furniture, made easier.</h2></div></div>
+  <div class="features">
+    <div class="feature"><b>✓ Quality materials</b><span class="small">Built with attention to durability and finish.</span></div>
+    <div class="feature"><b>✓ Custom orders</b><span class="small">Ask about custom sizes, fabrics and finishes.</span></div>
+    <div class="feature"><b>✓ Delivery available</b><span class="small">Arrange delivery according to your location.</span></div>
+    <div class="feature"><b>✓ Easy ordering</b><span class="small">Send your product choice through WhatsApp.</span></div>
+  </div>
+</div>
+</section>
+
+<section id="about" class="about">
+<div class="container about-grid">
+  <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?auto=format&fit=crop&w=1100&q=85" alt="Elegant furniture showroom">
+  <div><div class="eyebrow" style="color:var(--accent)">About Oak & Loom</div><h2>Furniture that fits your life.</h2><p>We believe good furniture should look beautiful, feel comfortable and last. Our collection combines practical design with warm, timeless style for homes and workplaces.</p><p>From a single chair to a complete room, we help customers choose pieces that match their space, budget and taste.</p><a class="btn" href="#contact">Talk to us</a></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container contact">
+  <div class="contact-box"><div class="eyebrow" style="color:var(--accent)">Contact</div><h2>Let's furnish your space.</h2><p class="small">Send us your requirements and we'll get back to you. For the fastest response, use WhatsApp.</p>
+    <div class="contact-list">
+      <div><strong>WhatsApp</strong><span class="small">+92 300 0000000</span></div>
+      <div><strong>Email</strong><span class="small">hello@oakandloom.com</span></div>
+      <div><strong>Location</strong><span class="small">Okara, Punjab, Pakistan</span></div>
+      <div><strong>Hours</strong><span class="small">Mon–Sat · 10:00 AM–8:00 PM</span></div>
+    </div>
+  </div>
+  <div class="form"><h3>Send an enquiry</h3>
+    <form onsubmit="sendForm(event)">
+      <div><label for="name">Your name</label><input id="name" required placeholder="Enter your name"></div>
+      <div><label for="phone">Phone / WhatsApp</label><input id="phone" required placeholder="+92 ..."></div>
+      <div><label for="product">Interested in</label><select id="product"><option>General enquiry</option><option>Modern Comfort Sofa</option><option>Classic Lounge Chair</option><option>Oak Dining Set</option><option>Minimal Bed Frame</option><option>Storage Cabinet</option><option>Modern Coffee Table</option><option>Custom furniture</option></select></div>
+      <div><label for="message">Message</label><textarea id="message" placeholder="Tell us what you need..."></textarea></div>
+      <button class="btn" type="submit">Send via WhatsApp</button>
+      <div id="notice" class="notice">Opening WhatsApp…</div>
+    </form>
+  </div>
+</div>
+</section>
+</main>
+
+<a class="whatsapp" href="https://wa.me/923000000000" target="_blank" aria-label="WhatsApp">◔</a>
+
+<footer><div class="container footer-grid">
+  <div><strong>OAK & LOOM</strong><p>Modern furniture for comfortable, beautiful spaces.</p></div>
+  <div><strong>Explore</strong><a href="#products">Products</a><a href="#about">About</a><a href="#services">Services</a></div>
+  <div><strong>Contact</strong><a href="#contact">Get a quote</a><a href="https://wa.me/923000000000" target="_blank">WhatsApp</a></div>
+</div><div class="container copy">© 2026 Oak & Loom Furniture. All rights reserved.</div></footer>
+
+<script>
+const WA='923000000000'; // CHANGE THIS to your WhatsApp number, country code included, no + or spaces.
+function order(product){const msg=`Hello Oak & Loom! I am interested in the ${product}. Please share availability and details.`;window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank')}
+function sendForm(e){e.preventDefault();const name=document.getElementById('name').value,phone=document.getElementById('phone').value,product=document.getElementById('product').value,message=document.getElementById('message').value;const text=`Hello Oak & Loom!%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AInterested in: ${encodeURIComponent(product)}%0AMessage: ${encodeURIComponent(message)}`;document.getElementById('notice').style.display='block';window.open(`https://wa.me/${WA}?text=${text}`,'_blank')}
+</script>
+</body>
+</html>
